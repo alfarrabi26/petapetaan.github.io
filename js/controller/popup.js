@@ -3,6 +3,7 @@ import {toStringHDMS} from 'https://cdn.skypack.dev/ol/coordinate.js';
 import {overlay,map,popupinfo,idmarker} from '../config/peta.js';
 import {clickpopup} from '../template/popup.js';
 import {insertMarker,deleteMarker} from './marker.js';
+
 export function container(id){
     return document.getElementById(id);
 }
