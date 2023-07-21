@@ -64,7 +64,7 @@ export function hide(id){
     document.getElementById(id).style.display = 'none';
 }
 
-const place = [107.6175, -6.9039];
+const place = [107.57588251023402, -6.873420235962698];
 
 export let idmarker = {id:1};
 
@@ -74,7 +74,7 @@ const basemap = new TileLayer({
 
 const defaultstartmap = new View({
   center: fromLonLat(place),
-  zoom: 13,
+  zoom: 16,
 });
 
 export const overlay = new Overlay({
