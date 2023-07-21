@@ -6,7 +6,7 @@ import OSM from 'https://cdn.skypack.dev/ol/source/OSM.js';
 import {fromLonLat} from 'https://cdn.skypack.dev/ol/proj.js';
 import Overlay from 'https://cdn.skypack.dev/ol/Overlay.js';
 
-const attributions = '<a href="https://alfarrabi26.github.io/petapetaan.github.io/" target="_blank">&copy; PetaPetaan ULBI</a> ';
+const attributions = '<a href="https://petapedia.github.io/" target="_blank">&copy; PetaPetaan ULBI</a> ';
 
 export function container(id){
     return document.getElementById(id);
