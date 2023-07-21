@@ -3,7 +3,61 @@ import {toStringHDMS} from 'https://cdn.skypack.dev/ol/coordinate.js';
 import {overlay,map,popupinfo,idmarker} from '../config/peta.js';
 import {clickpopup} from '../template/popup.js';
 import {insertMarker,deleteMarker} from './marker.js';
-import {setInner,textBlur,onClick, getValue,setValue} from 'https://jscroot.github.io/element/croot.js';
+export function container(id){
+    return document.getElementById(id);
+}
+
+export function onClick(id,actionfunctionname){
+    document.getElementById(id).onclick = actionfunctionname;
+}
+
+export function onChange(id,actionfunctionname){
+    document.getElementById(id).onchange = function() {actionfunctionname()};
+}
+
+export function textFocus(id){
+    document.getElementById(id).focus();
+}
+
+export function textBlur(id){
+    document.getElementById(id).blur();
+}
+
+export function getValue(id){
+    return document.getElementById(id).value;
+}
+
+export function setValue(id,valuecontent){
+    return document.getElementById(id).value=valuecontent;
+}
+
+export function setInner(id,content){
+    document.getElementById(id).innerHTML = content;
+}
+
+export function addInner(id,content){
+    document.getElementById(id).innerHTML += content;
+}
+
+export function addChild(id,tag,classvalue,content){
+    let el = document.createElement(tag);
+    let classArray = classvalue.split(" ");
+    classArray.forEach(setClassValue.bind(null,el));
+    el.innerHTML = content;
+    document.getElementById(id).appendChild(el);
+}
+
+function setClassValue(el,classvalue){
+    el.classList.add(classvalue.trim());
+}
+
+export function show(id){
+    document.getElementById(id).style.display = 'block';
+}
+
+export function hide(id){
+    document.getElementById(id).style.display = 'none';
+}
 export function postWithToken(target_url,tokenkey,tokenvalue,datajson,responseFunction){
     var myHeaders = new Headers();
     myHeaders.append(tokenkey, tokenvalue);
